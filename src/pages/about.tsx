@@ -1,13 +1,29 @@
 import { Card, Text, Grid, Button, Row, Spacer, Table } from '@nextui-org/react';
+import { styled } from '@mui/system';
+import React from 'react';
+
+const MetallicGlossyHeader = styled(Card.Header)`
+background-image: linear-gradient(to bottom, #c2c2c2, #ebebeb, #c2c2c2, #ebebeb);
+  background-repeat: no-repeat;
+  background-size: 100% 200%;
+  color: #071236;
+  padding: 16px;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+`;
 
 export default function About() {
     return (
+        <React.Fragment>
+        <div style={{ background: 'linear-gradient(to bottom, #ebebeb, #071236)', minHeight: '100vh' }}>
         <Grid.Container gap={1}>
         <Grid sm={12} md={5}>
           <Card css={{ mw: "500px", mh: "400px" }}>
-            <Card.Header>
-              <Text b>Guarantor Overview</Text>
-            </Card.Header>
+            <MetallicGlossyHeader>
+              <Text b style={{ color: '#071236' }}>Guarantor Overview</Text>
+            </MetallicGlossyHeader>
             <Card.Divider />
             <Card.Body>
                 <Grid.Container>
@@ -85,7 +101,7 @@ export default function About() {
                         </Row>
                         <Row>
                             <Text>
-                                MyChart
+                               WaziWazi
                             </Text>
                         </Row>
                     </Grid>
@@ -94,10 +110,10 @@ export default function About() {
             <Card.Divider />
             <Card.Footer>
               <Row justify="space-evenly">
-                <Button size="sm" light>
+                <Button size="sm" style={{ color: '#071236' }}light>
                   Cancel
                 </Button>
-                <Button size="sm">Agree</Button>
+                <Button size="sm" style={{ backgroundColor: '#071236' }}>Agree</Button>
               </Row>
             </Card.Footer>
           </Card>
@@ -106,9 +122,9 @@ export default function About() {
             <Grid.Container>
                 <Grid sm={12} md={12}>
                     <Card>
-                        <Card.Header>
-                            <Text b>Visits</Text>
-                        </Card.Header>
+                        <MetallicGlossyHeader>
+                            <Text b style={{ color: '#071236' }}>Visits</Text>
+                        </MetallicGlossyHeader>
                         <Card.Divider />
                         <Card.Body>
                         <Table
@@ -157,9 +173,9 @@ export default function About() {
                 <Spacer />
                 <Grid sm={12} md={12}>
                     <Card>
-                        <Card.Header>
-                            <Text b>Statements</Text>
-                        </Card.Header>
+                        <MetallicGlossyHeader>
+                            <Text b style={{ color: '#071236' }}>Statements</Text>
+                        </MetallicGlossyHeader>
                         <Card.Divider />
                         <Card.Body>
                                 <Table
@@ -208,9 +224,9 @@ export default function About() {
                 <Spacer />
                 <Grid sm={12} md={12}>
                     <Card>
-                        <Card.Header>
-                            <Text b>Payments</Text>
-                        </Card.Header>
+                        <MetallicGlossyHeader>
+                            <Text b style={{ color: '#071236' }}>Payments</Text>
+                        </MetallicGlossyHeader>
                         <Card.Divider />
                         <Card.Body>
                                 <Table
@@ -259,5 +275,7 @@ export default function About() {
             </Grid.Container>
         </Grid>
       </Grid.Container>
+      </div>
+      </React.Fragment>
       );
 }
